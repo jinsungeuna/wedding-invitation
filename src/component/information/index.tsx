@@ -66,6 +66,11 @@ export const Information2 = () => {
             소중한 순간을 담아 보내주세요♥️
             <br />
             추첨을 통해 기프티콘을 보내드려요🎁
+            <br />
+            <span className="photo-upload-note">
+              Google 폼으로 연결되며, 업로드 시 구글 로그인이 필요할 수
+              있습니다.
+            </span>
           </div>
           <div className="break" />
           <Button
