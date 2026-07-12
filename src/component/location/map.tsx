@@ -56,7 +56,7 @@ const NaverMapLink = () => (
         const params = new URLSearchParams({
           goalx: PARKING_POSITION[0].toString(),
           goaly: PARKING_POSITION[1].toString(),
-          goalName: PARKING_LOCATION,
+          goalname: PARKING_LOCATION,
         })
 
         if (checkDevice() === "other") {
@@ -220,7 +220,7 @@ const NaverMap = () => {
                 const params = new URLSearchParams({
                   goalx: PARKING_POSITION[0].toString(),
                   goaly: PARKING_POSITION[1].toString(),
-                  goalName: PARKING_LOCATION,
+                  goalname: PARKING_LOCATION,
                 })
                 window.open(`tmap://route?${params.toString()}`, "_self")
                 break
