@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-import { useKakao, useNaver } from "../store"
+import { useNaver } from "../store"
 import nmapIcon from "../../icons/nmap-icon.png"
 import knaviIcon from "../../icons/knavi-icon.png"
 import tmapIcon from "../../icons/tmap-icon.png"
@@ -23,7 +23,7 @@ export const Map = () => {
 }
 
 const NaverMapLink = () => (
-  <div className="navigation">
+  <div className="navigation navigation-link-list">
     <button
       onClick={() => {
         window.open(
@@ -36,35 +36,65 @@ const NaverMapLink = () => (
       <img src={nmapIcon} alt="naver-map-icon" />
       네이버 지도에서 보기
     </button>
+    <button
+      onClick={() => {
+        window.open(
+          "https://map.kakao.com/link/search/" +
+            encodeURIComponent(LOCATION + " " + LOCATION_ADDRESS),
+          "_blank",
+        )
+      }}
+    >
+      <img src={knaviIcon} alt="kakao-map-icon" />
+      카카오맵에서 보기
+    </button>
+    <button
+      onClick={() => {
+        const params = new URLSearchParams({
+          goalx: WEDDING_HALL_POSITION[0].toString(),
+          goaly: WEDDING_HALL_POSITION[1].toString(),
+          goalName: LOCATION,
+        })
+
+        if (checkDevice() === "other") {
+          alert("티맵 길찾기는 모바일에서 확인하실 수 있습니다.")
+          return
+        }
+
+        window.open(`tmap://route?${params.toString()}`, "_self")
+      }}
+    >
+      <img src={tmapIcon} alt="t-map-icon" />
+      티맵으로 길찾기
+    </button>
   </div>
 )
+
+/**
+ * 사용자 기기 종류(iOS, Android 등)를 확인합니다.
+ */
+const checkDevice = () => {
+  const userAgent = window.navigator.userAgent
+  if (userAgent.match(/(iPhone|iPod|iPad)/)) {
+    return "ios"
+  } else if (userAgent.match(/(Android)/)) {
+    return "android"
+  } else {
+    return "other"
+  }
+}
 
 /**
  * 네이버 지도를 실제로 렌더링하는 내부 컴포넌트입니다.
  */
 const NaverMap = () => {
   const naver = useNaver()
-  const kakao = useKakao()
   const ref = useRef<HTMLDivElement>(null)
 
   // 모바일에서 스크롤 중 지도가 조작되는 것을 방지하기 위한 잠금 상태
   const [locked, setLocked] = useState(true)
   const [showLockMessage, setShowLockMessage] = useState(false)
   const lockMessageTimeout = useRef<number | null>(null)
-
-  /**
-   * 사용자 기기 종류(iOS, Android 등)를 확인합니다.
-   */
-  const checkDevice = () => {
-    const userAgent = window.navigator.userAgent
-    if (userAgent.match(/(iPhone|iPod|iPad)/)) {
-      return "ios"
-    } else if (userAgent.match(/(Android)/)) {
-      return "android"
-    } else {
-      return "other"
-    }
-  }
 
   useEffect(() => {
     // 네이버 지도 SDK가 로드되면 지도를 초기화합니다.
@@ -163,31 +193,19 @@ const NaverMap = () => {
           네이버 지도
         </button>
 
-        {/* 카카오 내비 연동 */}
+        {/* 카카오맵 연동 */}
         <button
           onClick={() => {
-            switch (checkDevice()) {
-              case "ios":
-              case "android":
-                if (kakao)
-                  kakao.Navi.start({
-                    name: LOCATION,
-                    x: WEDDING_HALL_POSITION[0],
-                    y: WEDDING_HALL_POSITION[1],
-                    coordType: "wgs84",
-                  })
-                break
-              default:
-                window.open(
-                  `https://map.kakao.com/link/search/${encodeURIComponent(LOCATION)}`,
-                  "_blank",
-                )
-                break
-            }
+            window.open(
+              `https://map.kakao.com/link/search/${encodeURIComponent(
+                LOCATION + " " + LOCATION_ADDRESS,
+              )}`,
+              "_blank",
+            )
           }}
         >
-          <img src={knaviIcon} alt="kakao-navi-icon" />
-          카카오 내비
+          <img src={knaviIcon} alt="kakao-map-icon" />
+          카카오맵
         </button>
 
         {/* 티맵 연동 */}

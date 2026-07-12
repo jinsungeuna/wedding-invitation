@@ -88,6 +88,23 @@
         height: 0.9rem;
       }
     }
+
+    &.navigation-link-list {
+      flex-direction: column;
+      gap: 0.5rem;
+
+      > button {
+        flex: none;
+        width: 100%;
+        padding: 0.5rem 0;
+        border-right: none;
+        border-bottom: 1px solid var(--dark-grey-color);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
   }
 
   .location-info {
