@@ -6,6 +6,9 @@ import { LazyDiv } from "../lazyDiv"
 import { Modal } from "../modal"
 import { AttendanceInfo } from "./attendance"
 
+const PHOTO_UPLOAD_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScn3BScdBy9ce66V02M_svH2QkyFlEQBR2aKnE77u02-J_Jcg/viewform?usp=publish-editor"
+
 /**
  * 축의금 계좌번호 안내 컴포넌트입니다.
  * 신랑측, 신부측 계좌번호를 모달로 보여줍니다.
@@ -56,6 +59,24 @@ export const Information2 = () => {
         >
           신부측 계좌번호 보기
         </Button>
+
+        <div className="photo-upload">
+          <div className="photo-upload-title">예식 사진·영상 올려주기</div>
+          <div className="content">
+            소중한 순간을 담아 보내주세요♥️
+            <br />
+            추첨을 통해 기프티콘을 보내드려요🎁
+          </div>
+          <div className="break" />
+          <Button
+            style={{ width: "100%" }}
+            onClick={() => {
+              window.open(PHOTO_UPLOAD_FORM_URL, "_blank", "noopener,noreferrer")
+            }}
+          >
+            사진·영상 업로드하기
+          </Button>
+        </div>
       </div>
 
       {/* 계좌 정보 모달 */}

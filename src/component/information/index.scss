@@ -22,6 +22,18 @@
     line-height: 1.9;
     font-size: 0.9rem;
   }
+
+  .photo-upload {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dotted var(--dark-grey-color);
+
+    .photo-upload-title {
+      margin-bottom: 0.7rem;
+      color: var(--theme-color);
+      font-size: 1rem;
+    }
+  }
 }
 
 .donation-modal {
