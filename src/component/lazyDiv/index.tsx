@@ -12,6 +12,14 @@ export const LazyDiv = (props: HTMLAttributes<HTMLDivElement>) => {
 
   useEffect(() => {
     const divElement = ref.current
+
+    // 일부 모바일 브라우저가 IntersectionObserver를 지원하지 않아도
+    // 콘텐츠가 투명한 상태로 남지 않도록 바로 표시합니다.
+    if (!("IntersectionObserver" in window)) {
+      divElement.classList.add("lazy-active")
+      return
+    }
+
     // 요소가 화면에 나타나는지 감시합니다.
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

@@ -6,9 +6,8 @@ import tmapIcon from "../../icons/tmap-icon.png"
 import LockIcon from "../../icons/lock-icon.svg?react"
 import UnlockIcon from "../../icons/unlock-icon.svg?react"
 import {
-  KMAP_PLACE_ID,
   LOCATION,
-  NMAP_PLACE_ID,
+  LOCATION_ADDRESS,
   WEDDING_HALL_POSITION,
 } from "../../const"
 import { NAVER_MAP_CLIENT_ID } from "../../env"
@@ -20,8 +19,25 @@ import { NAVER_MAP_CLIENT_ID } from "../../env"
  */
 export const Map = () => {
   // 네이버 지도 클라이언트 ID가 설정되어 있을 때만 지도를 렌더링합니다.
-  return NAVER_MAP_CLIENT_ID ? <NaverMap /> : <div>Map is not available</div>
+  return NAVER_MAP_CLIENT_ID ? <NaverMap /> : <NaverMapLink />
 }
+
+const NaverMapLink = () => (
+  <div className="navigation">
+    <button
+      onClick={() => {
+        window.open(
+          "https://map.naver.com/p/search/" +
+            encodeURIComponent(LOCATION + " " + LOCATION_ADDRESS),
+          "_blank",
+        )
+      }}
+    >
+      <img src={nmapIcon} alt="naver-map-icon" />
+      네이버 지도에서 보기
+    </button>
+  </div>
+)
 
 /**
  * 네이버 지도를 실제로 렌더링하는 내부 컴포넌트입니다.
@@ -137,18 +153,10 @@ const NaverMap = () => {
         {/* 네이버 지도 연동 */}
         <button
           onClick={() => {
-            switch (checkDevice()) {
-              case "ios":
-              case "android":
-                window.open(`nmap://place?id=${NMAP_PLACE_ID}`, "_self")
-                break
-              default:
-                window.open(
-                  `https://map.naver.com/p/entry/place/${NMAP_PLACE_ID}`,
-                  "_blank",
-                )
-                break
-            }
+            window.open(
+              `https://map.naver.com/p/search/${encodeURIComponent(LOCATION)}`,
+              "_blank",
+            )
           }}
         >
           <img src={nmapIcon} alt="naver-map-icon" />
@@ -171,7 +179,7 @@ const NaverMap = () => {
                 break
               default:
                 window.open(
-                  `https://map.kakao.com/link/map/${KMAP_PLACE_ID}`,
+                  `https://map.kakao.com/link/search/${encodeURIComponent(LOCATION)}`,
                   "_blank",
                 )
                 break

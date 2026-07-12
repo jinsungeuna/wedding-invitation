@@ -8,7 +8,7 @@ export const NAVER_MAP_CLIENT_ID = import.meta.env.VITE_NAVER_MAP_CLIENT_ID
  * 카카오 SDK 자바스크립트 키
  * .env 파일의 VITE_KAKAO_SDK_JS_KEY에서 가져옵니다.
  */
-export const KAKAO_SDK_JS_KEY = import.meta.env.VITE_KAKAO_SDK_JS_KEY
+export const KAKAO_SDK_JS_KEY = "461a05717bbfa191b843fa6a5bc9fec1"
 
 /**
  * 백엔드 서버 URL (방명록 기능 등에 사용)
