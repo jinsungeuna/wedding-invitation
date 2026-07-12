@@ -8,6 +8,8 @@ import UnlockIcon from "../../icons/unlock-icon.svg?react"
 import {
   LOCATION,
   LOCATION_ADDRESS,
+  PARKING_LOCATION,
+  PARKING_POSITION,
   WEDDING_HALL_POSITION,
 } from "../../const"
 import { NAVER_MAP_CLIENT_ID } from "../../env"
@@ -39,8 +41,9 @@ const NaverMapLink = () => (
     <button
       onClick={() => {
         window.open(
-          "https://map.kakao.com/link/search/" +
-            encodeURIComponent(LOCATION + " " + LOCATION_ADDRESS),
+          `https://map.kakao.com/link/map/${encodeURIComponent(
+            LOCATION,
+          )},${WEDDING_HALL_POSITION[1]},${WEDDING_HALL_POSITION[0]}`,
           "_blank",
         )
       }}
@@ -51,9 +54,9 @@ const NaverMapLink = () => (
     <button
       onClick={() => {
         const params = new URLSearchParams({
-          goalx: WEDDING_HALL_POSITION[0].toString(),
-          goaly: WEDDING_HALL_POSITION[1].toString(),
-          goalName: LOCATION,
+          goalx: PARKING_POSITION[0].toString(),
+          goaly: PARKING_POSITION[1].toString(),
+          goalName: PARKING_LOCATION,
         })
 
         if (checkDevice() === "other") {
@@ -65,7 +68,7 @@ const NaverMapLink = () => (
       }}
     >
       <img src={tmapIcon} alt="t-map-icon" />
-      티맵으로 길찾기
+      티맵 주차장 길찾기
     </button>
   </div>
 )
@@ -197,9 +200,9 @@ const NaverMap = () => {
         <button
           onClick={() => {
             window.open(
-              `https://map.kakao.com/link/search/${encodeURIComponent(
-                LOCATION + " " + LOCATION_ADDRESS,
-              )}`,
+              `https://map.kakao.com/link/map/${encodeURIComponent(
+                LOCATION,
+              )},${WEDDING_HALL_POSITION[1]},${WEDDING_HALL_POSITION[0]}`,
               "_blank",
             )
           }}
@@ -215,9 +218,9 @@ const NaverMap = () => {
               case "ios":
               case "android": {
                 const params = new URLSearchParams({
-                  goalx: WEDDING_HALL_POSITION[0].toString(),
-                  goaly: WEDDING_HALL_POSITION[1].toString(),
-                  goalName: LOCATION,
+                  goalx: PARKING_POSITION[0].toString(),
+                  goaly: PARKING_POSITION[1].toString(),
+                  goalName: PARKING_LOCATION,
                 })
                 window.open(`tmap://route?${params.toString()}`, "_self")
                 break
@@ -230,7 +233,7 @@ const NaverMap = () => {
           }}
         >
           <img src={tmapIcon} alt="t-map-icon" />
-          티맵
+          티맵 주차장
         </button>
       </div>
     </>

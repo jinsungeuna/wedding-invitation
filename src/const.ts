@@ -56,6 +56,13 @@ export const SHARE_ADDRESS_TITLE = LOCATION
 export const WEDDING_HALL_POSITION = [126.879696, 37.5035892]
 
 /**
+ * 차량 내비게이션 목적지로 사용할 주차장 정보
+ */
+export const PARKING_LOCATION = "구로기계공구상가 주차장"
+export const PARKING_ADDRESS = "서울 구로구 경인로 565"
+export const PARKING_POSITION = [126.879696, 37.5035892]
+
+/**
  * 네이버 지도 장소 ID (NMAP_PLACE_ID)
  * 네이버 지도에서 장소 검색 후 URL의 숫자 부분을 입력합니다.
  */
