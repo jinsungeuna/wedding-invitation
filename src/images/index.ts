@@ -8,7 +8,6 @@ import image6 from "./image6.jpg"
 import image7 from "./image7.jpg"
 import image8 from "./image8.jpg"
 import image9 from "./image9.jpg"
-import image10 from "./image10.jpg"
 import image11 from "./image11.jpg"
 import image12 from "./image12.jpg"
 
@@ -30,7 +29,6 @@ export const GALLERY_IMAGES = [
   image7,
   image8,
   image9,
-  image10,
   image11,
   image12,
 ]

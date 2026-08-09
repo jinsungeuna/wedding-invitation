@@ -16,7 +16,7 @@ import { Button } from "../button"
 import { LazyDiv } from "../lazyDiv"
 import PhoneIcon from "../../icons/phone-flip-icon.svg?react"
 import EnvelopeIcon from "../../icons/envelope-icon.svg?react"
-import ChrysanthemumIcon from "../../icons/chrysanthemum-icon.svg?react"
+import chrysanthemumFlower from "../../icons/chrysanthemum-flower.png"
 import { useState } from "react"
 
 /**
@@ -34,7 +34,7 @@ export const Invitation = () => {
         <div className="break" />
 
         {/* 초대 문구 */}
-        <div className="content">가을빛이 곱게 물드는 날</div>
+        <div className="content">가을빛이 곱게 물든 날</div>
         <div className="content">소중한 분들을 모시고</div>
         <div className="content">사랑의 약속을 하려고 합니다.</div>
         <div className="break" />
@@ -42,8 +42,9 @@ export const Invitation = () => {
         <div className="content">비가 오면 우산이 되어주는</div>
         <div className="content">부부가 되겠습니다.</div>
         <div className="break" />
-        <div className="content">기쁜날 함께 하시어</div>
-        <div className="content">저희의 앞날을 축복해 주세요.</div>
+        <div className="content">귀한 시간 내어 찾아주시는</div>
+        <div className="content">모든 분들께 진심으로 감사드리며,</div>
+        <div className="content">앞으로도 따뜻한 응원 부탁드립니다.</div>
 
         <div className="break" />
 
@@ -59,7 +60,11 @@ export const Invitation = () => {
         <div className="name">
           {BRIDE_FATHER} ·{" "}
           <span className="memorial-name">
-            <ChrysanthemumIcon className="chrysanthemum-icon" />
+            <img
+              className="chrysanthemum-icon"
+              src={chrysanthemumFlower}
+              alt="국화꽃"
+            />
             {BRIDE_MOTHER}
           </span>
           <span className="relation">

@@ -18,9 +18,10 @@
     }
 
     .chrysanthemum-icon {
-      width: 0.95em;
-      height: 0.95em;
-      transform: translateY(-0.03em);
+      width: 1.05em;
+      height: 1.05em;
+      object-fit: contain;
+      transform: translateY(-0.04em);
     }
 
     .relation {
