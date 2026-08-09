@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="국화꽃">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path
+      d="M32 7c3.8 6.4 3.8 12.2 0 17.2C28.2 19.2 28.2 13.4 32 7Z"
+      fill="#fff7d6"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <path
+      d="M32 57c-3.8-6.4-3.8-12.2 0-17.2 3.8 5 3.8 10.8 0 17.2Z"
+      fill="#fff7d6"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <path
+      d="M7 32c6.4-3.8 12.2-3.8 17.2 0-5 3.8-10.8 3.8-17.2 0Z"
+      fill="#fff7d6"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <path
+      d="M57 32c-6.4 3.8-12.2 3.8-17.2 0 5-3.8 10.8-3.8 17.2 0Z"
+      fill="#fff7d6"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <path
+      d="M14.3 14.3c7.2 1.8 11.3 5.9 12.2 12.2-6.3-.9-10.4-5-12.2-12.2Z"
+      fill="#fff2bd"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <path
+      d="M49.7 49.7c-7.2-1.8-11.3-5.9-12.2-12.2 6.3.9 10.4 5 12.2 12.2Z"
+      fill="#fff2bd"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <path
+      d="M49.7 14.3c-1.8 7.2-5.9 11.3-12.2 12.2.9-6.3 5-10.4 12.2-12.2Z"
+      fill="#fff2bd"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <path
+      d="M14.3 49.7c1.8-7.2 5.9-11.3 12.2-12.2-.9 6.3-5 10.4-12.2 12.2Z"
+      fill="#fff2bd"
+      stroke="#d9b85f"
+      stroke-width="2"
+    />
+    <circle cx="32" cy="32" r="8.5" fill="#f4c84d" stroke="#c99b25" stroke-width="2" />
+    <circle cx="32" cy="32" r="3" fill="#9b6b1f" />
+  </g>
+</svg>

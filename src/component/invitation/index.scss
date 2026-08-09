@@ -9,6 +9,20 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 1.1rem;
+
+    .memorial-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      vertical-align: middle;
+    }
+
+    .chrysanthemum-icon {
+      width: 0.95em;
+      height: 0.95em;
+      transform: translateY(-0.03em);
+    }
+
     .relation {
       font-size: 0.75rem;
       opacity: 0.7;

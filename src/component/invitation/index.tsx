@@ -16,6 +16,7 @@ import { Button } from "../button"
 import { LazyDiv } from "../lazyDiv"
 import PhoneIcon from "../../icons/phone-flip-icon.svg?react"
 import EnvelopeIcon from "../../icons/envelope-icon.svg?react"
+import ChrysanthemumIcon from "../../icons/chrysanthemum-icon.svg?react"
 import { useState } from "react"
 
 /**
@@ -56,7 +57,11 @@ export const Invitation = () => {
         </div>
         {/* 혼주 및 신부 정보 */}
         <div className="name">
-          {BRIDE_FATHER} · {BRIDE_MOTHER}
+          {BRIDE_FATHER} ·{" "}
+          <span className="memorial-name">
+            <ChrysanthemumIcon className="chrysanthemum-icon" />
+            {BRIDE_MOTHER}
+          </span>
           <span className="relation">
             의 <span className="relation-name">{BRIDE_TITLE}</span>
           </span>{" "}

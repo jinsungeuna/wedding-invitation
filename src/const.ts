@@ -79,7 +79,7 @@ export const BRIDE_FULLNAME = "전은아"
 export const BRIDE_FIRSTNAME = "은아"
 export const BRIDE_TITLE = "장녀"
 export const BRIDE_FATHER = "전재근"
-export const BRIDE_MOTHER = "故 이순덕"
+export const BRIDE_MOTHER = "이순덕"
 
 /**
  * 신부측 연락처 및 계좌 정보
